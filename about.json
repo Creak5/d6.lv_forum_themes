@@ -1,0 +1,17 @@
+{
+  "name": "D6.lv baltais dizians",
+  "color_schemes": {
+	"D6 White": {
+		"primary": "222222",
+		"secondary": "ededed",
+		"tertiary": "2f7a42",
+		"quaternary": "e45735",
+		"header_background": "111111",
+		"header_primary": "a0a0a0",
+		"highlight": "ac6d22",
+		"danger": "e45735",
+		"success": "009900",
+		"love": "fa6c8d"
+	}
+  }
+}

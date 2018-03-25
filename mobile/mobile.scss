@@ -1,0 +1,89 @@
+.topic-list>tbody>tr:first-of-type {
+ border-top:3px solid #48ba65 !important
+}
+
+
+.create {
+    background:#2f7a42;
+    color:#ededed;
+}
+.create:hover {
+    background:#45c165;
+    color: #333333;
+}
+#create-topic {
+ background:#4ba361;
+ color: #ededed;
+}
+#create-topic:hover {
+  background:#55d177;
+  color: #333;
+}
+
+.mention{
+    background: #cfcfcf !important;
+}
+aside.onebox {
+  border: 5px solid #48ba65
+}
+blockquote {
+  border-left: 5px solid #48ba65
+}
+aside.quote .title {
+  border-left: 5px solid #48ba65
+}
+aside.quote .title {
+  border-left: 5px solid #48ba65
+}
+
+.timeline-handle{
+    background: #e45735 !important;
+}
+
+.topic-body {
+    border-top: 1px solid #e0e0e0;
+}
+
+.d-editor-preview-wrapper {
+border:dashed #909090 2px !important;
+padding:8px;
+}
+
+.title-and-category {
+ width:48.8% !important
+}
+
+.nav-stacked a:hover {
+    transition:background 0.1s linear;
+    transition:color 0,1s linear;
+    background:#e0e0e0;
+    color:#848484;
+}
+
+.top-sub-section li { 
+    transition: border-left 0.2s ease;
+    border-left:solid 2px #e9e9e9;
+}
+.top-sub-section li:hover {
+    border-left:solid 2px #d55400;
+}
+.topic-list>tbody>tr {
+border-bottom:1px solid #d3d3d3;
+}
+
+.drop>li:hover {
+  background:#cecece;
+}
+@media all and (max-width:342px) {
+  .panel li:not(.read) {
+    height:35px;
+    width: 35px;
+    font-size:12px;
+  }
+}
+.topic-avatar .avatar-flair {
+  font-size: 17px;
+}
+.collapsed-info .avatar-flair {
+  font-size:9px
+}
