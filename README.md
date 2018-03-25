@@ -1,1 +1,1 @@
-# d6.lv_forum_themes
+# D6.lv baltais dizains priiekš Discourse
