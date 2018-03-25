@@ -1,1 +1,1 @@
-# D6.lv baltais dizains priiekš Discourse
+# D6.lv baltais dizains priekš Discourse
