@@ -11,3 +11,30 @@
 <script type="text/discourse-plugin" version="0.2">
     api.changeWidgetSetting('post-avatar', 'size', '120');
 </script>
+
+<script>
+var secPic= "https://wallpapercave.com/wp/ttPNDzN.jpg";
+var defaultPic= "http://hdlatestwallpaper.com/?edmc=9897";
+var bg_var = localStorage.getItem("bgPic_var_storage");
+if (bg_var==1){
+  document.body.style.backgroundImage="url("+secPic+")";
+}
+else {
+  localStorage.setItem("bgPic_var_storage", 2);
+  document.body.style.backgroundImage="url("+defaultPic+")";
+}
+function picSwitch() {
+  var bg_var=localStorage.getItem("bgPic_var_storage");
+	switch(bg_var) {
+      case "1": 
+        document.body.style.backgroundImage="url("+defaultPic+")";
+        localStorage.setItem("bgPic_var_storage", 2);
+      break;
+      case "2":
+        document.body.style.backgroundImage="url("+secPic+")";
+        localStorage.setItem("bgPic_var_storage", 1);
+      break;
+      default:
+        break;
+    }
+}

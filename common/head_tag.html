@@ -1,1 +1,13 @@
 <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+
+<script type="text/discourse-plugin" version="0.4">
+api.decorateWidget('header-icons:before', helper => {
+    return helper.h('li', [
+        helper.h('a#home-button.icon', {
+            href:'https://d6.lv/',
+            title: 'D6 blogs'
+        }, helper.h('i.fa.fa-cube.home-button-icon.d-icon')),
+    ]);
+});
+</script>
+

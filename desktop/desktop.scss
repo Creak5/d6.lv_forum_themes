@@ -1,4 +1,11 @@
 
+html {
+ font-family:"Roboto", sans-serif;
+ font-weight:400
+}
+body input,body button,body select,body textarea {
+ font-family:"Roboto", Helvetica, Arial, sans-serif
+}
 .unread-notifications {
  background:#4ba361
 }
@@ -22,8 +29,8 @@
  }
 }
 .category-list {
- background:#ededed;
- margin-bottom:0px
+ background:RGBA(237,237,237,0.9);
+ margin-bottom:0px;
 }
 .topic-body.highlighted {
  animation:none
@@ -51,7 +58,7 @@ body {
  background-color:#323030
 }
 .list-controls,#list-area {
- background:#ededed
+ background:RGBA(237,237,237,0.9) none repeat scroll 0% 0%;
 }
 .list-controls {
  padding:6px
@@ -181,23 +188,14 @@ body {
     color: #333333;
 }
 #create-topic {
- 
-background:#4ba361;
- 
-color: #ededed;
-
+ background:#4ba361;
+ color: #ededed;
 }
-
-
 #create-topic:hover {
- 
-background:#55d177;
-  
-color: #333
-
+ background:#55d177;
+  color: #333
 }
-
-.mention{
+.mention, .mention-group{
     background: #cfcfcf !important;
 }
 aside.onebox {
@@ -271,7 +269,10 @@ border-bottom:1px solid #d3d3d3;
  height:50px;
  font-size:17px;
 }
-
+.avatar-flair .fa {
+  margin-left:3px;
+  margin-bottom:0.3px;
+}
 .topic-avatar .avatar-flair {
   font-size: 19px;
 }
@@ -305,4 +306,14 @@ border-bottom:1px solid #d3d3d3;
 .offset2 .topic-body {
   width: 600px
 }
+html {
+  overflow-x: hidden; 
+}
+
+body {
+ background:transparent url("https://i.imgur.com/5r1o5wI.jpg") repeat fixed center top/cover
+}
+
+
+
 
