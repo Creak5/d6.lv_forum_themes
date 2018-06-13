@@ -1,8 +1,6 @@
 .topic-list>tbody>tr:first-of-type {
  border-top:3px solid #48ba65 !important
 }
-
-
 .create {
     background:#2f7a42;
     color:#ededed;
@@ -20,7 +18,7 @@
   color: #333;
 }
 
-.mention{
+.mention,.mention-group{
     background: #cfcfcf !important;
 }
 aside.onebox {
@@ -86,4 +84,8 @@ border-bottom:1px solid #d3d3d3;
 }
 .collapsed-info .avatar-flair {
   font-size:9px
+}
+.avatar-flair .fa {
+  margin-left:3px;
+  margin-bottom:0.3px;
 }

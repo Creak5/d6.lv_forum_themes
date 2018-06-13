@@ -1,6 +1,5 @@
 <div id="top-navbarbackground">
 <div id="top-navbar" class="wrap" style="padding:5px 5px 0px 5px; font-size: 120%; font-weight: bold; color: #989898;">
-<a href="https://d6.lv" target="_blank" style="color: #d9d9d9;">d6.lv</a> |
   <a href="https://www.facebook.com/animeforumslv" target="_blank" style="color: #d9d9d9;">Facebook</a> |
   <a href="http://twitter.com/animeforumslv/" target="_blank" style="color: #d9d9d9;">Twitter</a> |
   <a href="https://www.youtube.com/channel/UCGEfWZ4E_9YeiEVVtyTN-HA" target="_blank" style="color: #d9d9d9;">Youtube</a> | 
@@ -13,29 +12,83 @@
     api.changeWidgetSetting('post-avatar', 'size', '120');
 </script>
 
+
 <script>
-var secPic= "https://wallpapercave.com/wp/ttPNDzN.jpg";
-var defaultPic= "http://hdlatestwallpaper.com/?edmc=9897";
+var bgColorPic="https://image.ibb.co/byeQQJ/asd.jpg";
+var defaultPic="https://i.pinimg.com/originals/0d/19/eb/0d19eb9a45115590ef42eeb6a6a51b37.jpg";
 var bg_var = localStorage.getItem("bgPic_var_storage");
 if (bg_var==1){
-  document.body.style.backgroundImage="url("+secPic+")";
-}
-else {
-  localStorage.setItem("bgPic_var_storage", 2);
   document.body.style.backgroundImage="url("+defaultPic+")";
+}
+else{
+    document.body.style.backgroundImage="url("+bgColorPic+")";
 }
 function picSwitch() {
   var bg_var=localStorage.getItem("bgPic_var_storage");
 	switch(bg_var) {
       case "1": 
-        document.body.style.backgroundImage="url("+defaultPic+")";
+        document.body.style.backgroundImage="url("+bgColorPic+")";
         localStorage.setItem("bgPic_var_storage", 2);
       break;
       case "2":
-        document.body.style.backgroundImage="url("+secPic+")";
+        document.body.style.backgroundImage="url("+defaultPic+")";
         localStorage.setItem("bgPic_var_storage", 1);
       break;
       default:
-        break;
+        document.body.style.backgroundImage="url("+defaultPic+")";
+        localStorage.setItem("bgPic_var_storage", 1);
+      break;
     }
 }
+</script>
+
+
+<script type="text/discourse-plugin" version="0.8">
+var h = require('virtual-dom').h;
+var ajax = require('discourse/lib/ajax').ajax;
+var themeSelector = require('discourse/lib/theme-selector');
+api.createWidget("theme-selector", {
+    click(event){
+        let $target = $(event.target);
+        let key = $target.data('key');
+        let user;
+        if (user = Discourse.__container__.lookup('current-user:main')) {
+            ajax('/u/' + user.username + ".json").then(r => {
+                themeSelector.setLocalTheme(key, r.user.user_option.theme_key_seq);
+                window.location.reload();
+            });
+            
+            return false;
+        } else {
+          themeSelector.setLocalTheme(key,0);  
+        }
+        
+        window.location.reload();
+        return false;
+    },
+    themeHtml(){
+        let themes = themeSelector.listThemes(this.site);
+        let currentThemeKey = themeSelector.currentThemeKey();
+        if (themes && themes.length > 1) {
+            return themes.map(theme => {
+                let name = [theme.name];
+                if (theme.id === currentThemeKey) {
+                    name.push('\xa0' + "*");
+                }
+                return h('li', h('a.widget-link', {attributes: {"data-key": theme.id}}, name));
+            });
+        }
+    },
+    html(){
+        let themeHtml = this.themeHtml();
+        if (themeHtml) {
+          return [h('ul.menu-links.columned', themeHtml), h('.clearfix'),  h('hr')];
+        }
+    }
+});
+api.decorateWidget('menu-links:before', (helper)=>{
+    if (helper.attrs.name === 'footer-links') {
+      return [helper.widget.attach('theme-selector')];
+    }
+});
+</script>
