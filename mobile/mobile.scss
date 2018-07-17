@@ -38,10 +38,6 @@ aside.quote .title {
     background: #e45735 !important;
 }
 
-.topic-body {
-    border-top: 1px solid #e0e0e0;
-}
-
 .d-editor-preview-wrapper {
 border:dashed #909090 2px !important;
 padding:8px;
@@ -88,4 +84,8 @@ border-bottom:1px solid #d3d3d3;
 .avatar-flair .fa {
   margin-left:3px;
   margin-bottom:0.3px;
+}
+
+.topic-post article {
+  border-top: 1px solid #dbdbdb !important;
 }
