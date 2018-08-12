@@ -1,4 +1,4 @@
-html {
+﻿html {
  font-family:"Roboto", sans-serif;
  font-weight:400;
  overflow-x: hidden;
@@ -125,14 +125,20 @@ body {
 }
 @media all and (max-width: 870px) {
  .topic-body {
-  width:calc(100% - 90px)
+  width:calc(100% - 112px)
  }
  #topic-title .title-wrapper,.topic-status-info,#topic-footer-buttons,#suggested-topics,#topic-title .title-wrapper,.small-action,.signup-cta,.presence-users {
   width:calc(100% - 113px)
  }
 }
+
+@media all and (max-width: 775px){
+    #topic-title .title-wrapper,.topic-status-info,#topic-footer-buttons,#suggested-topics,#topic-title .title-wrapper,.small-action,.signup-cta,.presence-users {
+  width:calc(100% - 135px)
+ }
+}
 .embedded-posts .topic-body {
- width:calc(100% - 75px);
+ width:calc(100% - 90px);
  padding:15px 15px 20px 15px
 }
 .embedded-posts .topic-avatar {
@@ -313,7 +319,6 @@ body {
     color:$primary;
 }
 
-
-
-
-
+.embedded-posts {
+  border: none;
+}
